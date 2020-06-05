@@ -1,0 +1,12 @@
+---
+ - name: ios_backup_playbook
+   hosts: ios
+   gather_facts: false
+
+   tasks:
+     - name: configure backup path
+       ios_config:
+         backup: yes
+         backup_options:
+           filename: ios_config_{{ inventory_hostname }}_backup.cfg
+           dir_path: /opt/ansible/ios_backups
