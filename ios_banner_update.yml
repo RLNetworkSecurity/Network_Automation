@@ -7,5 +7,5 @@
      - name: configure banner
        ios_banner:
          banner: motd
-         text: "{{ lookup('file', '/opt/ansible/configurations/banner.cfg') }}"
+         text: "{{ lookup('file', '/opt/ansible/configurations/Cisco_NSB_banner.cfg') }}"
          state: present
