@@ -1,0 +1,11 @@
+---
+ - name: ios_banner_update
+   hosts: ios
+   gather_facts: false
+
+   tasks:
+     - name: configure banner
+       ios_banner:
+         banner: motd
+         text: "{{ lookup('file', '/opt/ansible/configurations/banner.cfg') }}"
+         state: present
